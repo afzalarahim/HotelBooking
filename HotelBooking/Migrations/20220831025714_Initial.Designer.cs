@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelBooking.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220817040315_InitialData")]
-    partial class InitialData
+    [Migration("20220831025714_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -293,13 +293,13 @@ namespace HotelBooking.Migrations
 
             modelBuilder.Entity("HotelBooking.Models.Review", b =>
                 {
-                    b.HasOne("HotelBooking.Models.Hotel", "Room")
+                    b.HasOne("HotelBooking.Models.Hotel", "Hotel")
                         .WithMany("Reviews")
                         .HasForeignKey("HotelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Room");
+                    b.Navigation("Hotel");
                 });
 
             modelBuilder.Entity("HotelBooking.Models.Room", b =>

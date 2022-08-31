@@ -291,13 +291,13 @@ namespace HotelBooking.Migrations
 
             modelBuilder.Entity("HotelBooking.Models.Review", b =>
                 {
-                    b.HasOne("HotelBooking.Models.Hotel", "Room")
+                    b.HasOne("HotelBooking.Models.Hotel", "Hotel")
                         .WithMany("Reviews")
                         .HasForeignKey("HotelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Room");
+                    b.Navigation("Hotel");
                 });
 
             modelBuilder.Entity("HotelBooking.Models.Room", b =>
